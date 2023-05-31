@@ -36,9 +36,9 @@ public class SellerService {
 		address.setCity(sellerAddress.getCity());
 		address.setLandmark(sellerAddress.getLandmark());
 		address.setUser(seller);
-		List<SellerAddress> list = new ArrayList();
-		list.add(address);
-		seller.setAddress(list);
+//		List<SellerAddress> list = new ArrayList();
+//		list.add(address);
+//		seller.setAddress(list);
 		seller.getSellerId();
 		return sellerRepository.save(seller);
 	}

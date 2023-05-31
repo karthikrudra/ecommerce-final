@@ -33,21 +33,20 @@ public class Seller {
 	private long mobileNumber;
 	@Column(name ="gender")
 	private String gender;
-	@OneToMany(mappedBy = "seller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	@JsonManagedReference
-	@JsonIgnore
-	private List<SellerAddress> address;
-	@OneToMany(mappedBy = "seller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	@JsonManagedReference
-	@JsonIgnore
-	private List<Product> product;
+//	@OneToMany(mappedBy = "seller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//	@JsonManagedReference
+//	@JsonIgnore
+//	private List<SellerAddress> address;
+//	@OneToMany(mappedBy = "seller",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//	@JsonManagedReference
+//	@JsonIgnore
+//	private List<Product> product;
 	
 	public Seller() {
 		super();
 	}
 
-	public Seller(int sellerId, String sellerName, String mailId, String password, long mobileNumber, String gender,
-			List<SellerAddress> address,List<Product> product) {
+	public Seller(int sellerId, String sellerName, String mailId, String password, long mobileNumber, String gender) {
 		super();
 		this.sellerId = sellerId;
 		this.sellerName = sellerName;
@@ -55,8 +54,8 @@ public class Seller {
 		this.password = password;
 		this.mobileNumber = mobileNumber;
 		this.gender = gender;
-		this.address = address;
-		this.product = product;
+//		this.address = address;
+//		this.product = product;
 	}
 
 	public int getSellerId() {
@@ -107,29 +106,29 @@ public class Seller {
 		this.gender = gender;
 	}
 
-	public List<SellerAddress> getAddress() {
-		return address;
-	}
+//	public List<SellerAddress> getAddress() {
+//		return address;
+//	}
+//
+//	public void setAddress(List<SellerAddress> address) {
+//		this.address = address;
+//	}
+//
+//	public List<Product> getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(List<Product> product) {
+//		this.product = product;
+//	}
 
-	public void setAddress(List<SellerAddress> address) {
-		this.address = address;
-	}
-
-	public List<Product> getProduct() {
-		return product;
-	}
-
-	public void setProduct(List<Product> product) {
-		this.product = product;
-	}
-
-	@Override
-	public String toString() {
-		return "Seller [sellerId=" + sellerId + ", sellerName=" + sellerName + ", mailId=" + mailId + ", password="
-				+ password + ", mobileNumber=" + mobileNumber + ", gender=" + gender + ", address=" + address
-				+ ", product=" + product + "]";
-	}
-	
+//	@Override
+//	public String toString() {
+//		return "Seller [sellerId=" + sellerId + ", sellerName=" + sellerName + ", mailId=" + mailId + ", password="
+//				+ password + ", mobileNumber=" + mobileNumber + ", gender=" + gender + ", address=" + address
+//				+ ", product=" + product + "]";
+//	}
+//	
 	
 	
 	

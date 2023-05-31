@@ -66,9 +66,9 @@ public class OrdersController {
 			
 	
 	@DeleteMapping("/deleteOrder")
-	public ResponseEntity<String> deleteOrder(@RequestParam int orderId)
+	public ResponseEntity<String> deleteOrder(@RequestParam int orderId,int userid)
 	{
-		ordersService.deleteOrder(orderId);
+		ordersService.deleteOrder(orderId,userid);
 		return ResponseEntity.ok().body("Order Deleted......");
 	}
 	

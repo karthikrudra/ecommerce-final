@@ -113,9 +113,14 @@ public class OrdersService {
 	
 
 	
-	public void deleteOrder(int orderId) {
-			
+	public void deleteOrder(int orderId,int userId) {
+		User user = restTemplate.getForObject(dynamicPort.getUrl(userUrl)+"/userbyid?userId="+userId,User.class);
 		ordersReposotory.deleteById(orderId);
+		message.setFrom("ecommercefashio7@gmail.com");
+		message.setTo(user.getMailId());
+		message.setText("On your request order is cancelled . please do order again");
+		message.setSubject("Thanks for oderining in fashio");
+		mailSender.send(message);
 	}
     
 	public List<Order> findOrdersByUserId(int userid){
